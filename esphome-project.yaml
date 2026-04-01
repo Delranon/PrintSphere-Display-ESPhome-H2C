@@ -227,39 +227,132 @@ text_sensor:
               u = std::string("${homeassistant_url}") + u;
             return u;
           update: true
+  # AMS 1 – Trays 1-4
   - platform: homeassistant
-    id: ams1_color
-    entity_id: sensor.${bambulab_printer}_ams_1_tray_1 #AMS 1 Tray 1
+    id: ams1_t1_color
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_1
     attribute: color
     internal: true
   - platform: homeassistant
-    id: ams1_name
+    id: ams1_t1_name
     entity_id: sensor.${bambulab_printer}_ams_1_tray_1
     attribute: type
     internal: true
   - platform: homeassistant
-    id: ams1_remaining
+    id: ams1_t1_remain
     entity_id: sensor.${bambulab_printer}_ams_1_tray_1
     attribute: remain
     internal: true
   - platform: homeassistant
-    id: ams2_color
+    id: ams1_t2_color
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_2
+    attribute: color
+    internal: true
+  - platform: homeassistant
+    id: ams1_t2_name
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_2
+    attribute: type
+    internal: true
+  - platform: homeassistant
+    id: ams1_t2_remain
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_2
+    attribute: remain
+    internal: true
+  - platform: homeassistant
+    id: ams1_t3_color
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_3
+    attribute: color
+    internal: true
+  - platform: homeassistant
+    id: ams1_t3_name
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_3
+    attribute: type
+    internal: true
+  - platform: homeassistant
+    id: ams1_t3_remain
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_3
+    attribute: remain
+    internal: true
+  - platform: homeassistant
+    id: ams1_t4_color
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_4
+    attribute: color
+    internal: true
+  - platform: homeassistant
+    id: ams1_t4_name
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_4
+    attribute: type
+    internal: true
+  - platform: homeassistant
+    id: ams1_t4_remain
+    entity_id: sensor.${bambulab_printer}_ams_1_tray_4
+    attribute: remain
+    internal: true
+  # AMS 2 – Trays 1-4
+  - platform: homeassistant
+    id: ams2_t1_color
     entity_id: sensor.${bambulab_serial}_ams_2_tray_1
     attribute: color
     internal: true
   - platform: homeassistant
-    id: ams2_name
-    entity_id: sensor.${bambulab_serial}_ams_2_tray_1 #AMS 2 Tray 1
+    id: ams2_t1_name
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_1
     attribute: type
     internal: true
   - platform: homeassistant
-    id: ams2_remaining
+    id: ams2_t1_remain
     entity_id: sensor.${bambulab_serial}_ams_2_tray_1
     attribute: remain
     internal: true
+  - platform: homeassistant
+    id: ams2_t2_color
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_2
+    attribute: color
+    internal: true
+  - platform: homeassistant
+    id: ams2_t2_name
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_2
+    attribute: type
+    internal: true
+  - platform: homeassistant
+    id: ams2_t2_remain
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_2
+    attribute: remain
+    internal: true
+  - platform: homeassistant
+    id: ams2_t3_color
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_3
+    attribute: color
+    internal: true
+  - platform: homeassistant
+    id: ams2_t3_name
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_3
+    attribute: type
+    internal: true
+  - platform: homeassistant
+    id: ams2_t3_remain
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_3
+    attribute: remain
+    internal: true
+  - platform: homeassistant
+    id: ams2_t4_color
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_4
+    attribute: color
+    internal: true
+  - platform: homeassistant
+    id: ams2_t4_name
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_4
+    attribute: type
+    internal: true
+  - platform: homeassistant
+    id: ams2_t4_remain
+    entity_id: sensor.${bambulab_serial}_ams_2_tray_4
+    attribute: remain
+    internal: true
+  # AMS HT – Tray 1
   - platform: homeassistant
     id: ams128_color
-    entity_id: sensor.${bambulab_serial}_ams_128_tray_1 #AMS HT
+    entity_id: sensor.${bambulab_serial}_ams_128_tray_1
     attribute: color
     internal: true
   - platform: homeassistant
@@ -269,7 +362,7 @@ text_sensor:
     internal: true
   - platform: homeassistant
     id: ams128_remaining
-    entity_id: sensor.h${bambulab_serial}_ams_128_tray_1
+    entity_id: sensor.${bambulab_serial}_ams_128_tray_1
     attribute: remain
     internal: true
 
@@ -315,45 +408,165 @@ lvgl:
         bg_color: 0x000000
         bg_opa: 0
         border_opa: 0
+    # --- AMS 1 (4 trays) ---
+    - label:
+        id: lbl_ams1_hdr
+        text: "AMS 1"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
     - obj:
-        id: ams1_swatch
-        width: 40
-        height: 24
-        radius: 6
+        id: ams1_t1_sw
+        width: 34
+        height: 18
+        radius: 4
         bg_color: 0x888888
         bg_opa: 100%
     - label:
-        id: ams1_name_label
+        id: ams1_t1_type
         text: "--"
         text_font: font_dosis_20
         text_color: 0xFFFFFF
     - label:
-        id: ams1_rem_label
-        text: "--"
+        id: ams1_t1_rem
+        text: "--%"
         text_font: font_dosis_20
-        text_color: 0xDDDDDD
+        text_color: 0xAAAAAA
     - obj:
-        id: ams2_swatch
-        width: 40
-        height: 24
-        radius: 6
+        id: ams1_t2_sw
+        width: 34
+        height: 18
+        radius: 4
         bg_color: 0x888888
         bg_opa: 100%
     - label:
-        id: ams2_name_label
+        id: ams1_t2_type
         text: "--"
         text_font: font_dosis_20
         text_color: 0xFFFFFF
     - label:
-        id: ams2_rem_label
+        id: ams1_t2_rem
+        text: "--%"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
+    - obj:
+        id: ams1_t3_sw
+        width: 34
+        height: 18
+        radius: 4
+        bg_color: 0x888888
+        bg_opa: 100%
+    - label:
+        id: ams1_t3_type
         text: "--"
         text_font: font_dosis_20
-        text_color: 0xDDDDDD
+        text_color: 0xFFFFFF
+    - label:
+        id: ams1_t3_rem
+        text: "--%"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
+    - obj:
+        id: ams1_t4_sw
+        width: 34
+        height: 18
+        radius: 4
+        bg_color: 0x888888
+        bg_opa: 100%
+    - label:
+        id: ams1_t4_type
+        text: "--"
+        text_font: font_dosis_20
+        text_color: 0xFFFFFF
+    - label:
+        id: ams1_t4_rem
+        text: "--%"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
+    # --- AMS 2 (4 trays) ---
+    - label:
+        id: lbl_ams2_hdr
+        text: "AMS 2"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
+    - obj:
+        id: ams2_t1_sw
+        width: 34
+        height: 18
+        radius: 4
+        bg_color: 0x888888
+        bg_opa: 100%
+    - label:
+        id: ams2_t1_type
+        text: "--"
+        text_font: font_dosis_20
+        text_color: 0xFFFFFF
+    - label:
+        id: ams2_t1_rem
+        text: "--%"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
+    - obj:
+        id: ams2_t2_sw
+        width: 34
+        height: 18
+        radius: 4
+        bg_color: 0x888888
+        bg_opa: 100%
+    - label:
+        id: ams2_t2_type
+        text: "--"
+        text_font: font_dosis_20
+        text_color: 0xFFFFFF
+    - label:
+        id: ams2_t2_rem
+        text: "--%"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
+    - obj:
+        id: ams2_t3_sw
+        width: 34
+        height: 18
+        radius: 4
+        bg_color: 0x888888
+        bg_opa: 100%
+    - label:
+        id: ams2_t3_type
+        text: "--"
+        text_font: font_dosis_20
+        text_color: 0xFFFFFF
+    - label:
+        id: ams2_t3_rem
+        text: "--%"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
+    - obj:
+        id: ams2_t4_sw
+        width: 34
+        height: 18
+        radius: 4
+        bg_color: 0x888888
+        bg_opa: 100%
+    - label:
+        id: ams2_t4_type
+        text: "--"
+        text_font: font_dosis_20
+        text_color: 0xFFFFFF
+    - label:
+        id: ams2_t4_rem
+        text: "--%"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
+    # --- AMS HT (1 tray, centered) ---
+    - label:
+        id: lbl_amsht_hdr
+        text: "AMS HT"
+        text_font: font_dosis_20
+        text_color: 0xAAAAAA
     - obj:
         id: ams128_swatch
-        width: 40
-        height: 24
-        radius: 6
+        width: 34
+        height: 18
+        radius: 4
         bg_color: 0x888888
         bg_opa: 100%
     - label:
@@ -363,9 +576,9 @@ lvgl:
         text_color: 0xFFFFFF
     - label:
         id: ams128_rem_label
-        text: "--"
+        text: "--%"
         text_font: font_dosis_20
-        text_color: 0xDDDDDD                
+        text_color: 0xAAAAAA
     - arc:
         id: arc_main
         align: center
@@ -536,7 +749,7 @@ interval:
           lv_obj_set_style_bg_opa(page1, LV_OPA_TRANSP, LV_PART_MAIN);
           lv_obj_set_style_border_opa(page1, LV_OPA_TRANSP, LV_PART_MAIN);
           lv_obj_set_pos(page1, 0, 0);
-          
+
           // page2
           lv_obj_t* page2 = lv_obj_create(pager);
           lv_obj_set_size(page2, W, H);
@@ -551,46 +764,64 @@ interval:
           lv_obj_set_style_border_opa(page3, LV_OPA_TRANSP, LV_PART_MAIN);
           lv_obj_set_pos(page3, 2*W, 0);  // Seite 3 rechts von page2
 
-          // AMS1 Widgets parenten
-          lv_obj_set_parent(id(ams1_swatch), page3);
-          lv_obj_set_parent(id(ams1_name_label), page3);
-          lv_obj_set_parent(id(ams1_rem_label), page3);
-          // AMS2 Widgets parenten
-          lv_obj_set_parent(id(ams2_swatch), page3);
-          lv_obj_set_parent(id(ams2_name_label), page3);
-          lv_obj_set_parent(id(ams2_rem_label), page3);
-          // AMS128 Widgets parenten
+          // === AMS page 3 – 4-column grid per AMS, AMS HT centered ===
+          // Column X centers (40px apart, swatch 34px wide → 3px gap each side)
+          const int TX[4] = {-60, -20, 20, 60};
+          // Group Y anchor = center of header label
+          const int G1Y = -115;  // AMS 1
+          const int G2Y = -25;   // AMS 2
+          const int G3Y =  65;   // AMS HT
+
+          // ── AMS 1 ──
+          lv_obj_set_parent(id(lbl_ams1_hdr), page3);
+          lv_obj_align(id(lbl_ams1_hdr), LV_ALIGN_CENTER, 0, G1Y);
+          {
+            lv_obj_t* sw[4] = {id(ams1_t1_sw), id(ams1_t2_sw), id(ams1_t3_sw), id(ams1_t4_sw)};
+            lv_obj_t* ty[4] = {id(ams1_t1_type), id(ams1_t2_type), id(ams1_t3_type), id(ams1_t4_type)};
+            lv_obj_t* re[4] = {id(ams1_t1_rem), id(ams1_t2_rem), id(ams1_t3_rem), id(ams1_t4_rem)};
+            for (int i = 0; i < 4; i++) {
+              lv_obj_set_parent(sw[i], page3);
+              lv_obj_set_parent(ty[i], page3);
+              lv_obj_set_parent(re[i], page3);
+              lv_obj_align(sw[i], LV_ALIGN_CENTER, TX[i], G1Y + 24);
+              lv_obj_align(ty[i], LV_ALIGN_CENTER, TX[i], G1Y + 47);
+              lv_obj_align(re[i], LV_ALIGN_CENTER, TX[i], G1Y + 67);
+            }
+          }
+
+          // ── AMS 2 ──
+          lv_obj_set_parent(id(lbl_ams2_hdr), page3);
+          lv_obj_align(id(lbl_ams2_hdr), LV_ALIGN_CENTER, 0, G2Y);
+          {
+            lv_obj_t* sw[4] = {id(ams2_t1_sw), id(ams2_t2_sw), id(ams2_t3_sw), id(ams2_t4_sw)};
+            lv_obj_t* ty[4] = {id(ams2_t1_type), id(ams2_t2_type), id(ams2_t3_type), id(ams2_t4_type)};
+            lv_obj_t* re[4] = {id(ams2_t1_rem), id(ams2_t2_rem), id(ams2_t3_rem), id(ams2_t4_rem)};
+            for (int i = 0; i < 4; i++) {
+              lv_obj_set_parent(sw[i], page3);
+              lv_obj_set_parent(ty[i], page3);
+              lv_obj_set_parent(re[i], page3);
+              lv_obj_align(sw[i], LV_ALIGN_CENTER, TX[i], G2Y + 24);
+              lv_obj_align(ty[i], LV_ALIGN_CENTER, TX[i], G2Y + 47);
+              lv_obj_align(re[i], LV_ALIGN_CENTER, TX[i], G2Y + 67);
+            }
+          }
+
+          // ── AMS HT (single tray, centered) ──
+          lv_obj_set_parent(id(lbl_amsht_hdr), page3);
+          lv_obj_align(id(lbl_amsht_hdr), LV_ALIGN_CENTER, 0, G3Y);
           lv_obj_set_parent(id(ams128_swatch), page3);
+          lv_obj_align(id(ams128_swatch), LV_ALIGN_CENTER, 0, G3Y + 24);
           lv_obj_set_parent(id(ams128_name_label), page3);
+          lv_obj_align(id(ams128_name_label), LV_ALIGN_CENTER, 0, G3Y + 47);
           lv_obj_set_parent(id(ams128_rem_label), page3);
-
-          // Positionierung (Grid-artig)
-          const int P3_X_LEFT = -120;
-          const int P3_X_NAME = P3_X_LEFT + 60;
-          const int P3_Y0     = -120;
-          const int P3_Y_STEP = 56;   // etwas mehr Platz, da zwei Zeilen
-
-          // AMS1 (row 0)
-          lv_obj_align(id(ams1_swatch),      LV_ALIGN_CENTER, P3_X_LEFT,    P3_Y0 + 0*P3_Y_STEP);
-          lv_obj_align(id(ams1_name_label),  LV_ALIGN_CENTER, P3_X_NAME,    P3_Y0 + 0*P3_Y_STEP);
-          lv_obj_align(id(ams1_rem_label),   LV_ALIGN_CENTER, P3_X_NAME,    P3_Y0 + 0*P3_Y_STEP + 18); // rem unter name
-
-          // AMS2 (row 1)
-          lv_obj_align(id(ams2_swatch),      LV_ALIGN_CENTER, P3_X_LEFT,    P3_Y0 + 1*P3_Y_STEP);
-          lv_obj_align(id(ams2_name_label),  LV_ALIGN_CENTER, P3_X_NAME,    P3_Y0 + 1*P3_Y_STEP);
-          lv_obj_align(id(ams2_rem_label),   LV_ALIGN_CENTER, P3_X_NAME,    P3_Y0 + 1*P3_Y_STEP + 18);
-
-          // AMS128 (row 2)
-          lv_obj_align(id(ams128_swatch),    LV_ALIGN_CENTER, P3_X_LEFT,    P3_Y0 + 2*P3_Y_STEP);
-          lv_obj_align(id(ams128_name_label),LV_ALIGN_CENTER, P3_X_NAME,    P3_Y0 + 2*P3_Y_STEP);
-          lv_obj_align(id(ams128_rem_label), LV_ALIGN_CENTER, P3_X_NAME,    P3_Y0 + 2*P3_Y_STEP + 18);
+          lv_obj_align(id(ams128_rem_label), LV_ALIGN_CENTER, 0, G3Y + 67);
 
           // page 1 content
           lv_obj_set_parent(id(lbl_status), page1);
           lv_obj_align(id(lbl_status), LV_ALIGN_CENTER, 0, -86);
 
           lv_obj_set_parent(id(lbl_layer), page1);
-          lv_obj_align(id(lbl_layer), LV_ALIGN_CENTER, 0, 70);  
+          lv_obj_align(id(lbl_layer), LV_ALIGN_CENTER, 0, 70);
 
           lv_obj_set_parent(id(row_remaining), page1);
           lv_obj_set_width(id(row_remaining), 280);                   // fix: keine dynamische Breite
@@ -607,7 +838,7 @@ interval:
           lv_obj_align(id(img_logo_small), LV_ALIGN_CENTER, 0, -7);
           // Sicherheit: nie über den Text legen
           lv_obj_move_background(id(img_logo_small));
-          lv_obj_clear_flag(id(img_logo_small), LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);     
+          lv_obj_clear_flag(id(img_logo_small), LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);
 
           // === Nozzle & Bed NUR auf Page 1 ===
           lv_obj_set_parent(id(lbl_nozzle_icon), page1);
@@ -646,7 +877,7 @@ interval:
           lv_obj_move_foreground(id(arc_main));
           // sicherstellen, dass er keine Touches blockt
           lv_obj_clear_flag(id(arc_main), LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);
-          
+
           // %-Label (auch oben, damit es nie verdeckt wird)
           const int RING_SIZE = 466;
           const int PCT_MARGIN_FROM_TOP = 46;
@@ -662,30 +893,30 @@ interval:
           lv_obj_set_parent(id(page2_note), page2);
           lv_obj_align(id(page2_note), LV_ALIGN_CENTER, 0, 0);
           lv_obj_set_style_text_color(id(page2_note), lv_color_hex(0x888888), LV_PART_MAIN);
-          
+
           // runde Maske als Parent
           lv_obj_set_parent(id(img_mask), page2);
           lv_obj_align(id(img_mask), LV_ALIGN_CENTER, 0, 0);
           lv_obj_set_style_clip_corner(id(img_mask), true, LV_PART_MAIN);
           lv_obj_set_scrollbar_mode(id(img_mask), LV_SCROLLBAR_MODE_OFF);
           lv_obj_clear_flag(id(img_mask), LV_OBJ_FLAG_SCROLLABLE | LV_OBJ_FLAG_CLICKABLE);
-          
+
           // Bild in die Maske
           lv_obj_set_parent(id(img_preview), id(img_mask));
           lv_obj_center(id(img_preview));
           lv_obj_clear_flag(id(img_preview), LV_OBJ_FLAG_SCROLLABLE | LV_OBJ_FLAG_CLICKABLE);
-          
+
           // Auf Seite 1 starten
           lv_obj_scroll_to_view(page1, LV_ANIM_OFF);
-          
+
           // === Smooth scrolling: throttle heavy redraws during pager scroll ===
           lv_obj_add_event_cb(pager, [](lv_event_t* e){
             using namespace esphome::lvgl;
             const int W = 466;
-          
+
             static bool p1_shown  = true;   // gemerkter Sichtbarkeitszustand
             static bool init_done = false;
-          
+
             auto set_page1_visible = [&](bool visible){
               if (p1_shown == visible) return;  // Hysterese: nur toggeln, wenn nötig
               for (auto o : { id(lbl_status), id(lbl_layer), id(row_remaining),
@@ -695,33 +926,33 @@ interval:
               }
               p1_shown = visible;
             };
-          
+
             lv_event_code_t code = lv_event_get_code(e);
-          
+
             if (code == LV_EVENT_SCROLL_BEGIN) {
               id(is_scrolling) = true;  // dein bestehendes Throttling nutzt das Flag
             }
-          
+
             if (code == LV_EVENT_SCROLL || code == LV_EVENT_SCROLL_BEGIN) {
               // Wie weit wurde horizontal gerollt? 0 ~ Page1 zentriert, ~W ~ Page2 zentriert
               int sx = lv_obj_get_scroll_x(lv_event_get_target(e));
-          
+
               // Hysterese-Schwellen: stabil gegen Hin-und-Her um die Mitte
               const int THRESH_HIDE = (int)(W * 0.60f);  // >60% Richtung Page2 ⇒ Page1-Widgets aus
               const int THRESH_SHOW = (int)(W * 0.40f);  // <40% zurück ⇒ Page1-Widgets an
-          
+
               if (sx > THRESH_HIDE)       set_page1_visible(false);
               else if (sx < THRESH_SHOW)  set_page1_visible(true);
-          
+
               if (!init_done) {           // einmalige Initialisierung (Start auf Page1)
                 set_page1_visible(true);
                 init_done = true;
               }
             }
-          
+
             if (code == LV_EVENT_SCROLL_END || code == LV_EVENT_RELEASED) {
               id(is_scrolling) = false;
-          
+
               // Nach Snap final „einrasten“: Page1 sichtbar, wenn deren Anteil dominiert
               int sx = lv_obj_get_scroll_x(lv_event_get_target(e));
               set_page1_visible(sx < (W/2));
@@ -865,23 +1096,23 @@ interval:
     then:
       - lambda: |-
           auto lower = [](std::string s){ for(auto &c:s) c=(char)tolower((unsigned char)c); return s; };
-      
+
           // Progress lesen + puffern
           int p = id(print_progress).has_state() ? (int) id(print_progress).state : id(last_prog);
           if (p < 0) p = 0;
           if (p > 100) p = 100;
           if (id(print_progress).has_state()) id(last_prog) = p;  // nur bei echtem Update überschreiben
-      
+
           // Status & Stage
           std::string ps = id(print_status).has_state() ? lower(id(print_status).state) : "";
           std::string st = id(current_stage).has_state() ? lower(id(current_stage).state) : "";
-      
+
           // DONE strikt
           bool done_strict = ((ps == "finish" || ps == "finished" || ps.find("finish") != std::string::npos)
                               && (st.find("idle") != std::string::npos)
                               && (p == 100));
           bool failed   = ps == "failed" || ps.find("fail") != std::string::npos;
-      
+
           // Aktiv-Logik (an Wahrheitstabelle angepasst):
           // - aktiv, sobald Fortschritt (1..99) oder Status "running/prepare/printing"
           // - deaktiv, wenn done_strict oder failed
@@ -1005,14 +1236,14 @@ interval:
           std::string ps    = id(print_status).has_state()  ? lower(id(print_status).state)  : "";
           int prog = id(print_progress).has_state() ? (int)id(print_progress).state : 0;
           if (prog < 0) prog = 0; if (prog > 100) prog = 100;
-          
+
           // Filament = gelb
           if (stage.find("filament_loading") != std::string::npos
            || stage.find("filament_unloading") != std::string::npos) {
             lv_obj_set_style_text_color(id(lbl_status), lv_color_hex(0xFFD54F), LV_PART_MAIN);
             return;
           }
-          
+
           // Fehler = rot (außer Filament)
           bool ps_failed = (ps == "failed") || (ps.find("fail") != std::string::npos);
           bool err_print = id(druckfehler).has_state() && id(druckfehler).state;
@@ -1021,7 +1252,7 @@ interval:
             lv_obj_set_style_text_color(id(lbl_status), lv_color_hex(0xFF3333), LV_PART_MAIN);
             return;
           }
-          
+
           // DONE strikt = blau
           bool done_strict = ((ps == "finish" || ps == "finished" || ps.find("finish") != std::string::npos)
                               && (stage.find("idle") != std::string::npos)
@@ -1030,7 +1261,7 @@ interval:
             lv_obj_set_style_text_color(id(lbl_status), lv_color_hex(0x00BFFF), LV_PART_MAIN);
             return;
           }
-          
+
           // idle/offline aber nicht fertig
           bool idleish = stage.find("idle") != std::string::npos || stage.find("offline") != std::string::npos;
           if (idleish) {
@@ -1043,7 +1274,7 @@ interval:
             }
             return;
           }
-          
+
           // restliche Stages
           if (stage.find("heatbed_preheating") != std::string::npos
            || stage.find("nozzle_preheating")  != std::string::npos
@@ -1103,7 +1334,7 @@ interval:
           }
           lv_obj_align(id(row_remaining), LV_ALIGN_CENTER, 0, 170);
 
-          
+
 
       - lvgl.label.update:
           id: lbl_layer
@@ -1205,63 +1436,26 @@ interval:
   - interval: 1s
     then:
     - lambda: |-
-        // Farbe parsen (nimmt immer die ersten 6 Hex Zeichen nach '#')
-        if (id(ams1_color).has_state()) {
-          std::string c = id(ams1_color).state; // z.B. "#FFFFFFFF" oder "#RRGGBB"
-          if (c.size() >= 7 && c[0] == '#') {
-            std::string hex6 = c.substr(1,6); // immer RRGGBB
-            uint32_t col = (uint32_t)strtoul(hex6.c_str(), nullptr, 16);
-            lv_obj_set_style_bg_color(id(ams1_swatch), lv_color_hex(col), LV_PART_MAIN);
-          } else {
-            lv_obj_set_style_bg_color(id(ams1_swatch), lv_color_hex(0x888888), LV_PART_MAIN);
-          }
-        } else {
-          lv_obj_set_style_bg_color(id(ams1_swatch), lv_color_hex(0x444444), LV_PART_MAIN);
-        }
-
-        // Name setzen
-        if (id(ams1_name).has_state()) {
-          lv_label_set_text(id(ams1_name_label), id(ams1_name).state.c_str());
-        } else {
-          lv_label_set_text(id(ams1_name_label), "--");
-        }
-
-        // Remaining anzeigen
-        if (id(ams1_remaining).has_state()) {
-          lv_label_set_text(id(ams1_rem_label), id(ams1_remaining).state.c_str());
-        } else {
-          lv_label_set_text(id(ams1_rem_label), "--");
-        }
-
-        // AMS2 Swatch Color
-        if (id(ams2_color).has_state()) {
-          std::string c = id(ams2_color).state;
-          if (c.size() >= 7 && c[0] == '#') {
-            std::string hex = c.substr(1,6);
-            uint32_t col = (uint32_t)strtoul(hex.c_str(), nullptr, 16);
-            lv_obj_set_style_bg_color(id(ams2_swatch), lv_color_hex(col), LV_PART_MAIN);
-          } else {
-            lv_obj_set_style_bg_color(id(ams2_swatch), lv_color_hex(0x888888), LV_PART_MAIN);
-          }
-        } else {
-          lv_obj_set_style_bg_color(id(ams2_swatch), lv_color_hex(0x444444), LV_PART_MAIN);
-        }
-
-        // AMS2 Name
-        if (id(ams2_name).has_state()) {
-          lv_label_set_text(id(ams2_name_label), id(ams2_name).state.c_str());
-        } else {
-          lv_label_set_text(id(ams2_name_label), "--");
-        }
-
-        // AMS2 Remaining
-        if (id(ams2_remaining).has_state()) {
-          lv_label_set_text(id(ams2_rem_label), id(ams2_remaining).state.c_str());
-        } else {
-          lv_label_set_text(id(ams2_rem_label), "--");
-        }
-
-    #    // optional Debug
-    #    ESP_LOGD("ams_dbg", "ams1_name -> '%s'", id(ams1_name).has_state() ? id(ams1_name).state.c_str() : "<no>");
-    #    ESP_LOGD("ams_dbg", "ams1_color -> '%s'", id(ams1_color).has_state() ? id(ams1_color).state.c_str() : "<no>");
-    #    ESP_LOGD("ams_dbg", "ams1_remain -> '%s'", id(ams1_remaining).has_state() ? id(ams1_remaining).state.c_str() : "<no>");
+        // Update all AMS tray swatches, type labels, and remaining labels
+        auto upd = [](lv_obj_t* sw, lv_obj_t* ty, lv_obj_t* re,
+                      esphome::text_sensor::TextSensor* cs,
+                      esphome::text_sensor::TextSensor* ns,
+                      esphome::text_sensor::TextSensor* rs) {
+          uint32_t col = (cs->has_state() && cs->state.size() >= 7 && cs->state[0] == '#')
+            ? (uint32_t)strtoul(cs->state.substr(1, 6).c_str(), nullptr, 16) : 0x444444U;
+          lv_obj_set_style_bg_color(sw, lv_color_hex(col), LV_PART_MAIN);
+          lv_label_set_text(ty, ns->has_state() ? ns->state.c_str() : "--");
+          lv_label_set_text(re, rs->has_state() ? rs->state.c_str() : "--%");
+        };
+        // AMS 1
+        upd(id(ams1_t1_sw), id(ams1_t1_type), id(ams1_t1_rem), id(ams1_t1_color), id(ams1_t1_name), id(ams1_t1_remain));
+        upd(id(ams1_t2_sw), id(ams1_t2_type), id(ams1_t2_rem), id(ams1_t2_color), id(ams1_t2_name), id(ams1_t2_remain));
+        upd(id(ams1_t3_sw), id(ams1_t3_type), id(ams1_t3_rem), id(ams1_t3_color), id(ams1_t3_name), id(ams1_t3_remain));
+        upd(id(ams1_t4_sw), id(ams1_t4_type), id(ams1_t4_rem), id(ams1_t4_color), id(ams1_t4_name), id(ams1_t4_remain));
+        // AMS 2
+        upd(id(ams2_t1_sw), id(ams2_t1_type), id(ams2_t1_rem), id(ams2_t1_color), id(ams2_t1_name), id(ams2_t1_remain));
+        upd(id(ams2_t2_sw), id(ams2_t2_type), id(ams2_t2_rem), id(ams2_t2_color), id(ams2_t2_name), id(ams2_t2_remain));
+        upd(id(ams2_t3_sw), id(ams2_t3_type), id(ams2_t3_rem), id(ams2_t3_color), id(ams2_t3_name), id(ams2_t3_remain));
+        upd(id(ams2_t4_sw), id(ams2_t4_type), id(ams2_t4_rem), id(ams2_t4_color), id(ams2_t4_name), id(ams2_t4_remain));
+        // AMS HT
+        upd(id(ams128_swatch), id(ams128_name_label), id(ams128_rem_label), id(ams128_color), id(ams128_name), id(ams128_remaining));
