@@ -416,72 +416,52 @@ lvgl:
         text_color: 0xAAAAAA
     - obj:
         id: ams1_t1_sw
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams1_t1_type
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams1_t1_rem
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     - obj:
         id: ams1_t2_sw
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams1_t2_type
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams1_t2_rem
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     - obj:
         id: ams1_t3_sw
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams1_t3_type
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams1_t3_rem
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     - obj:
         id: ams1_t4_sw
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams1_t4_type
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams1_t4_rem
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     # --- AMS 2 (4 trays) ---
     - label:
         id: lbl_ams2_hdr
@@ -490,72 +470,52 @@ lvgl:
         text_color: 0xAAAAAA
     - obj:
         id: ams2_t1_sw
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams2_t1_type
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams2_t1_rem
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     - obj:
         id: ams2_t2_sw
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams2_t2_type
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams2_t2_rem
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     - obj:
         id: ams2_t3_sw
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams2_t3_type
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams2_t3_rem
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     - obj:
         id: ams2_t4_sw
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams2_t4_type
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams2_t4_rem
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     # --- AMS HT (1 tray, centered) ---
     - label:
         id: lbl_amsht_hdr
@@ -564,21 +524,16 @@ lvgl:
         text_color: 0xAAAAAA
     - obj:
         id: ams128_swatch
-        width: 34
-        height: 18
-        radius: 4
+        width: 44
+        height: 26
+        radius: 5
         bg_color: 0x888888
         bg_opa: 100%
     - label:
         id: ams128_name_label
         text: "--"
-        text_font: font_dosis_20
+        text_font: font_dosis_32
         text_color: 0xFFFFFF
-    - label:
-        id: ams128_rem_label
-        text: "--%"
-        text_font: font_dosis_20
-        text_color: 0xAAAAAA
     - arc:
         id: arc_main
         align: center
@@ -765,12 +720,12 @@ interval:
           lv_obj_set_pos(page3, 2*W, 0);  // Seite 3 rechts von page2
 
           // === AMS page 3 – 4-column grid per AMS, AMS HT centered ===
-          // Column X centers (40px apart, swatch 34px wide → 3px gap each side)
-          const int TX[4] = {-60, -20, 20, 60};
+          // Column X centers (48px apart, swatch 44px wide → 2px gap each side)
+          const int TX[4] = {-72, -24, 24, 72};
           // Group Y anchor = center of header label
-          const int G1Y = -115;  // AMS 1
-          const int G2Y = -25;   // AMS 2
-          const int G3Y =  65;   // AMS HT
+          const int G1Y = -110;  // AMS 1
+          const int G2Y = -16;   // AMS 2
+          const int G3Y =  78;   // AMS HT
 
           // ── AMS 1 ──
           lv_obj_set_parent(id(lbl_ams1_hdr), page3);
@@ -778,14 +733,11 @@ interval:
           {
             lv_obj_t* sw[4] = {id(ams1_t1_sw), id(ams1_t2_sw), id(ams1_t3_sw), id(ams1_t4_sw)};
             lv_obj_t* ty[4] = {id(ams1_t1_type), id(ams1_t2_type), id(ams1_t3_type), id(ams1_t4_type)};
-            lv_obj_t* re[4] = {id(ams1_t1_rem), id(ams1_t2_rem), id(ams1_t3_rem), id(ams1_t4_rem)};
             for (int i = 0; i < 4; i++) {
               lv_obj_set_parent(sw[i], page3);
               lv_obj_set_parent(ty[i], page3);
-              lv_obj_set_parent(re[i], page3);
-              lv_obj_align(sw[i], LV_ALIGN_CENTER, TX[i], G1Y + 24);
-              lv_obj_align(ty[i], LV_ALIGN_CENTER, TX[i], G1Y + 47);
-              lv_obj_align(re[i], LV_ALIGN_CENTER, TX[i], G1Y + 67);
+              lv_obj_align(sw[i], LV_ALIGN_CENTER, TX[i], G1Y + 26);
+              lv_obj_align(ty[i], LV_ALIGN_CENTER, TX[i], G1Y + 56);
             }
           }
 
@@ -795,14 +747,11 @@ interval:
           {
             lv_obj_t* sw[4] = {id(ams2_t1_sw), id(ams2_t2_sw), id(ams2_t3_sw), id(ams2_t4_sw)};
             lv_obj_t* ty[4] = {id(ams2_t1_type), id(ams2_t2_type), id(ams2_t3_type), id(ams2_t4_type)};
-            lv_obj_t* re[4] = {id(ams2_t1_rem), id(ams2_t2_rem), id(ams2_t3_rem), id(ams2_t4_rem)};
             for (int i = 0; i < 4; i++) {
               lv_obj_set_parent(sw[i], page3);
               lv_obj_set_parent(ty[i], page3);
-              lv_obj_set_parent(re[i], page3);
-              lv_obj_align(sw[i], LV_ALIGN_CENTER, TX[i], G2Y + 24);
-              lv_obj_align(ty[i], LV_ALIGN_CENTER, TX[i], G2Y + 47);
-              lv_obj_align(re[i], LV_ALIGN_CENTER, TX[i], G2Y + 67);
+              lv_obj_align(sw[i], LV_ALIGN_CENTER, TX[i], G2Y + 26);
+              lv_obj_align(ty[i], LV_ALIGN_CENTER, TX[i], G2Y + 56);
             }
           }
 
@@ -810,11 +759,9 @@ interval:
           lv_obj_set_parent(id(lbl_amsht_hdr), page3);
           lv_obj_align(id(lbl_amsht_hdr), LV_ALIGN_CENTER, 0, G3Y);
           lv_obj_set_parent(id(ams128_swatch), page3);
-          lv_obj_align(id(ams128_swatch), LV_ALIGN_CENTER, 0, G3Y + 24);
+          lv_obj_align(id(ams128_swatch), LV_ALIGN_CENTER, 0, G3Y + 26);
           lv_obj_set_parent(id(ams128_name_label), page3);
-          lv_obj_align(id(ams128_name_label), LV_ALIGN_CENTER, 0, G3Y + 47);
-          lv_obj_set_parent(id(ams128_rem_label), page3);
-          lv_obj_align(id(ams128_rem_label), LV_ALIGN_CENTER, 0, G3Y + 67);
+          lv_obj_align(id(ams128_name_label), LV_ALIGN_CENTER, 0, G3Y + 56);
 
           // page 1 content
           lv_obj_set_parent(id(lbl_status), page1);
@@ -1436,26 +1383,24 @@ interval:
   - interval: 1s
     then:
     - lambda: |-
-        // Update all AMS tray swatches, type labels, and remaining labels
-        auto upd = [](lv_obj_t* sw, lv_obj_t* ty, lv_obj_t* re,
+        // Update all AMS tray swatches and type labels
+        auto upd = [](lv_obj_t* sw, lv_obj_t* ty,
                       esphome::text_sensor::TextSensor* cs,
-                      esphome::text_sensor::TextSensor* ns,
-                      esphome::text_sensor::TextSensor* rs) {
+                      esphome::text_sensor::TextSensor* ns) {
           uint32_t col = (cs->has_state() && cs->state.size() >= 7 && cs->state[0] == '#')
             ? (uint32_t)strtoul(cs->state.substr(1, 6).c_str(), nullptr, 16) : 0x444444U;
           lv_obj_set_style_bg_color(sw, lv_color_hex(col), LV_PART_MAIN);
           lv_label_set_text(ty, ns->has_state() ? ns->state.c_str() : "--");
-          lv_label_set_text(re, rs->has_state() ? rs->state.c_str() : "--%");
         };
         // AMS 1
-        upd(id(ams1_t1_sw), id(ams1_t1_type), id(ams1_t1_rem), id(ams1_t1_color), id(ams1_t1_name), id(ams1_t1_remain));
-        upd(id(ams1_t2_sw), id(ams1_t2_type), id(ams1_t2_rem), id(ams1_t2_color), id(ams1_t2_name), id(ams1_t2_remain));
-        upd(id(ams1_t3_sw), id(ams1_t3_type), id(ams1_t3_rem), id(ams1_t3_color), id(ams1_t3_name), id(ams1_t3_remain));
-        upd(id(ams1_t4_sw), id(ams1_t4_type), id(ams1_t4_rem), id(ams1_t4_color), id(ams1_t4_name), id(ams1_t4_remain));
+        upd(id(ams1_t1_sw), id(ams1_t1_type), id(ams1_t1_color), id(ams1_t1_name));
+        upd(id(ams1_t2_sw), id(ams1_t2_type), id(ams1_t2_color), id(ams1_t2_name));
+        upd(id(ams1_t3_sw), id(ams1_t3_type), id(ams1_t3_color), id(ams1_t3_name));
+        upd(id(ams1_t4_sw), id(ams1_t4_type), id(ams1_t4_color), id(ams1_t4_name));
         // AMS 2
-        upd(id(ams2_t1_sw), id(ams2_t1_type), id(ams2_t1_rem), id(ams2_t1_color), id(ams2_t1_name), id(ams2_t1_remain));
-        upd(id(ams2_t2_sw), id(ams2_t2_type), id(ams2_t2_rem), id(ams2_t2_color), id(ams2_t2_name), id(ams2_t2_remain));
-        upd(id(ams2_t3_sw), id(ams2_t3_type), id(ams2_t3_rem), id(ams2_t3_color), id(ams2_t3_name), id(ams2_t3_remain));
-        upd(id(ams2_t4_sw), id(ams2_t4_type), id(ams2_t4_rem), id(ams2_t4_color), id(ams2_t4_name), id(ams2_t4_remain));
+        upd(id(ams2_t1_sw), id(ams2_t1_type), id(ams2_t1_color), id(ams2_t1_name));
+        upd(id(ams2_t2_sw), id(ams2_t2_type), id(ams2_t2_color), id(ams2_t2_name));
+        upd(id(ams2_t3_sw), id(ams2_t3_type), id(ams2_t3_color), id(ams2_t3_name));
+        upd(id(ams2_t4_sw), id(ams2_t4_type), id(ams2_t4_color), id(ams2_t4_name));
         // AMS HT
-        upd(id(ams128_swatch), id(ams128_name_label), id(ams128_rem_label), id(ams128_color), id(ams128_name), id(ams128_remaining));
+        upd(id(ams128_swatch), id(ams128_name_label), id(ams128_color), id(ams128_name));
