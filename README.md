@@ -1,7 +1,8 @@
 Fork of the awesome PrintSphere-Display (ESPHome + LVGL, Round AMOLED) Project and modified for the H2C 
 with dual Nozzle and a few tweaks (remaining time)
 
-<img src="assets/20260216_200844.jpg" alt="PrintSphere UI: H2C Update" width="320">
+<img src="assets/20260216_225304.jpg" alt="PrintSphere UI: H2C Update" width="320">
+<img src="assets/20260216_225311.jpg" alt="PrintSphere UI: H2C Update" width="320">
 
 Will update with chamber heat temperature and so on
 
